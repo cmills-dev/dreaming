@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  04:30 daily: Dreaming (dreaming.sh, README.md). Consolidates the day's notes and writes the
+  dream report before the morning. dreaming.py does nothing if it starts after 06:00, and its
+  judge stops at 06:40, so the report lands by 06:45.
+  install.sh fills in __LABEL__, __DIR__ and __LOGDIR__ and loads the result. By hand:
+    launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/__LABEL__.plist
+  Run now:
+    launchctl kickstart gui/$(id -u)/__LABEL__
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>__LABEL__</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>__DIR__/dreaming.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>4</integer><key>Minute</key><integer>30</integer></dict>
+  <key>RunAtLoad</key><false/>
+  <key>StandardOutPath</key><string>__LOGDIR__/launchd.dreaming.out.log</string>
+  <key>StandardErrorPath</key><string>__LOGDIR__/launchd.dreaming.err.log</string>
+  <key>ProcessType</key><string>Background</string>
+</dict>
+</plist>
