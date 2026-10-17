@@ -9,7 +9,7 @@ changes no note unless you switch writes on, and even then it touches only two f
 fields. Everything else is a flag or a proposal for you to act on.
 
 It was built as one part of a personal agent system, the
-[Life Tracker](https://github.com/Cameron0404/life-tracker-kit), and runs on its own here.
+[Life Tracker](https://github.com/cmills-dev/life-tracker-kit), and runs on its own here.
 
 ## Why
 
@@ -112,7 +112,7 @@ anything but answer.
 1. Clone the repository somewhere permanent, because the LaunchAgent points at it.
 
    ```bash
-   git clone https://github.com/Cameron0404/dreaming.git ~/tools/dreaming
+   git clone https://github.com/cmills-dev/dreaming.git ~/tools/dreaming
    cd ~/tools/dreaming
    ```
 
